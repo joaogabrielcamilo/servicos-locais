@@ -6,11 +6,11 @@
 ## Descrição do Projeto
 Plataforma web que conecta visitantes a prestadores de serviços locais (pedreiro, eletricista, encanador, diarista, pintor, jardineiro etc.). O usuário pesquisa por categoria e cidade/bairro, visualiza o perfil de cada prestador e pode salvar favoritos. Prestadores podem se cadastrar para aparecer nas buscas.
 
-## Prototipação no Figma
-[link do Figma]
+## Prototipação (Stitch)
+Em andamento
 
 ## Design System
-[link do Design System]
+Em andamento
 
 ## Framework CSS
 Bootstrap
@@ -22,7 +22,7 @@ Bootstrap
 - JSON Server (API fake para persistência)
 
 ## Link para o site em produção
-[link do GitHub Pages]
+Em andamento 
 
 ## Checklist de Funcionalidades
 - [ ] Página de busca/listagem de prestadores
@@ -39,29 +39,10 @@ Bootstrap
 - [ ] Deploy no GitHub Pages
 
 ## Instruções de Execução
-
-### Pré-requisitos
-- [Node.js](https://nodejs.org/) instalado
-- Git instalado
-
-### Passos
-```bash
-# 1. Clone o repositório
-git clone https://github.com/1liroujon/servicos-locais.git
-cd servicos-locais
-
-# 2. Instale o JSON Server (API fake)
-npm install -g json-server
-
-# 3. Suba a API fake (na raiz do projeto, com um arquivo db.json)
-json-server --watch db.json --port 3000
-
-# 4. Abra o index.html no navegador
-# (recomenda-se usar a extensão "Live Server" do VS Code)
-```
+Em andamento
 
 ## Telas da Aplicação
-<!-- adicionar prints das telas aqui -->
+Em andamento 
 
 ---
 
