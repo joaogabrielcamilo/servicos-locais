@@ -12,10 +12,13 @@
 ```mermaid
 erDiagram
     CATEGORIA ||--o{ PRESTADOR : classifica
+    PRESTADOR ||--o{ SERVICO : oferece
+
     CATEGORIA {
         string id PK
         string nome
     }
+
     PRESTADOR {
         string id PK
         string nome
@@ -26,7 +29,16 @@ erDiagram
         string endereco
         string descricao
     }
+
+    SERVICO {
+        string id PK
+        string prestadorId FK
+        string nome
+        string descricao
+        decimal preco
+    }
 ```
+
 
 - **Categoria:** ex. Pedreiro, Eletricista, Encanador, Diarista, Pintor, Jardineiro.
 - **Prestador:** perfil do profissional, vinculado a uma categoria.
