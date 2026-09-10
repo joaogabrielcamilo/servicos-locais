@@ -7,7 +7,7 @@
 Plataforma web que conecta visitantes a prestadores de serviços locais (pedreiro, eletricista, encanador, diarista, pintor, jardineiro etc.). O usuário pesquisa por categoria e cidade/bairro, visualiza o perfil de cada prestador e pode salvar favoritos. Prestadores podem se cadastrar para aparecer nas buscas.
 
 ## Prototipação (Stitch)
-Em andamento
+https://stitch.withgoogle.com/projects/15344959909326285520
 
 ## Design System
 Em andamento
