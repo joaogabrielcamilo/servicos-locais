@@ -13,9 +13,17 @@ https://stitch.withgoogle.com/projects/15344959909326285520
 Em andamento
 
 ## Framework CSS
-Bootstrap
+**Bootstrap 5.3.8**
+
+**Justificativa:** Optei pelo Bootstrap por três motivos principais. Primeiro, o sistema de grid (Flexbox) resolve com poucas classes a responsividade mobile → tablet → desktop que prototipei no Stitch — essencial pro fluxo de busca/listagem de prestadores, que muda de cards empilhados (mobile) para grid multi-coluna (desktop). Segundo, os componentes prontos (cards para os prestadores, modais para os detalhes de perfil, navbar responsiva) já vêm com o JavaScript embutido, sem depender de jQuery desde a v5 — isso reduz bastante o código que eu precisaria escrever na mão para o modal de detalhes do prestador. Terceiro, é o framework com o repositório mais ativo no GitHub entre as opções avaliadas (Bootstrap, Materialize, Bulma), documentação completa e licença MIT, o que garante suporte de longo prazo para o projeto.
+
+## API Pública
+**ViaCEP**
+
+**Justificativa:** A ViaCEP já está sendo usada no cadastro de prestador para autopreenchimento de endereço a partir do CEP (rua, bairro, cidade, UF), eliminando a necessidade do prestador digitar o endereço completo manualmente. Isso agrega valor comercial direto: reduz o atrito e a taxa de abandono no formulário de cadastro, além de padronizar os dados de localização — o que é importante porque o filtro por cidade/bairro depende de dados de endereço consistentes. É uma API gratuita, sem necessidade de chave de autenticação, com resposta em JSON simples e bem documentada, o que a torna adequada tanto para o MVP quanto para produção.
 
 ## Dependências
+- Bootstrap 5.3.8
 - Vanilla JavaScript (ES6+)
 - Fetch API / async-await
 - ViaCEP (API pública de endereços)
