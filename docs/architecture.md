@@ -1,11 +1,16 @@
-# Serviços Locais — Especificação Técnica (architecture.md)
+# Serviços Locais — Especificação Técnica
 
 ## Design Tokens
 
-> Preencher após a prototipação no Google Stitch/Figma (Entrega 1). Sugestão inicial, ajuste conforme o protótipo:
+Os principais estilos visuais definidos no protótipo são:
 
-- **Cores:** primária (ex: azul `#2563EB` — confiança/serviço), secundária (ex: laranja `#F97316` — ação/contato), neutras para texto e fundo.
-- **Tipografia:** uma fonte para títulos (ex: Poppins/Montserrat, mais forte) e uma para corpo de texto (ex: Inter/Roboto, mais legível).
+- **Cor primária:** `#E05A2B`
+- **Cor secundária:** `#133842`
+- **Cor terciária:** `#E2E8F0`
+- **Cor neutra:** `#0F172A`
+- **Tipografia:** Plus Jakarta Sans
+
+Esses padrões serão usados nos botões, textos, cards, campos de busca e demais componentes da aplicação.
 
 ## Modelo de Dados
 
@@ -39,26 +44,53 @@ erDiagram
     }
 ```
 
-
-- **Categoria:** ex. Pedreiro, Eletricista, Encanador, Diarista, Pintor, Jardineiro.
-- **Prestador:** perfil do profissional, vinculado a uma categoria.
+- **Categoria:** tipo de serviço, como pedreiro, eletricista, diarista etc.
+- **Prestador:** profissional cadastrado na plataforma.
+- **Serviço:** serviço oferecido por um prestador.
 
 ## Tecnologias
 
-- **Framework CSS:** Bootstrap (sugestão — componentes prontos de Navbar, Cards e Modal já cobrem boa parte do escopo mínimo e é permitido pela disciplina; Tailwind está vetado). Pode trocar por Materialize/Bulma se preferir outro visual.
-- **JavaScript:** Vanilla JS (ES6+), com `fetch`/`async-await` para as chamadas assíncronas.
-- **Persistência local:** Web Storage (`localStorage`) para guardar a lista de prestadores favoritos do visitante.
-- **API fake:** JSON Server, servindo as entidades `categorias` e `prestadores` (cadastro, listagem, edição e exclusão).
-- **API pública:** ViaCEP — no formulário de cadastro do Prestador, ao digitar o CEP, o endereço (rua, bairro, cidade) é preenchido automaticamente via requisição assíncrona.
+- **Framework CSS:** Bootstrap 5.3.8
+- **JavaScript:** Vanilla JavaScript (ES6+)
+- **API Pública:** ViaCEP
+- **API Fake:** JSON Server
+- **Persistência local:** `localStorage`
 
-## Componentes que serão substituídos pelo Framework CSS
+O Bootstrap será utilizado para criar o layout responsivo e componentes como navbar, cards, formulários e modal.
 
-1. **Navbar** — atualmente estática no protótipo, será substituída pela navbar responsiva do Bootstrap.
-2. **Cards de Prestador** — usados na listagem de resultados de busca.
-3. **Modal** — usado para exibir os detalhes completos de um prestador ao clicar em "ver mais".
+O JSON Server será usado para armazenar os dados de categorias, prestadores e serviços durante o desenvolvimento.
 
-## Páginas (mínimo 3)
+O `localStorage` será utilizado para salvar os prestadores favoritos do visitante.
 
-1. **Home / Busca** — listagem de prestadores com filtro por categoria e cidade.
-2. **Cadastro de Prestador** — formulário com validação (campos obrigatórios, regex para telefone, autopreenchimento via ViaCEP).
-3. **Detalhes do Prestador** — página ou modal com informações completas e opção de favoritar.
+A ViaCEP será utilizada no cadastro do prestador para buscar o endereço automaticamente a partir do CEP.
+
+## Componentes do Bootstrap
+
+Os principais componentes que serão utilizados são:
+
+1. **Navbar** — navegação do site.
+2. **Cards** — listagem dos prestadores.
+3. **Modal** — exibição dos detalhes do prestador.
+4. **Formulários** — cadastro e edição de prestadores.
+
+## Páginas
+
+1. **Home / Busca** — listagem e filtros de prestadores.
+2. **Cadastro de Prestador** — formulário de cadastro com validação e ViaCEP.
+3. **Detalhes do Prestador** — informações completas e opção de favoritar.
+
+## ViaCEP
+
+No formulário de cadastro, o usuário informa o CEP e o sistema busca automaticamente informações como rua, bairro, cidade e estado.
+
+Endpoint:
+
+```text
+https://viacep.com.br/ws/{cep}/json/
+```
+
+Caso o CEP seja inválido, será exibida uma mensagem de erro.
+
+## Favoritos
+
+Os favoritos serão armazenados no `localStorage` do navegador e não terão uma entidade própria no `db.json`.
