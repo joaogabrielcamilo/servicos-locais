@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Encontre prestadores de serviços perto de você.">
+        <title>Buscar | Serviços Locais</title>
+        <link rel="icon" href="assets/img/logo.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+            <nav class="navbar container pagina-barra px-3" aria-label="Navegação principal">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="index.html" class="marca d-flex align-items-center gap-2">
+                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <span>
+                            <strong class="d-block">Serviços Locais</strong>
+                            <small class="d-block">Buscar</small>
+                        </span>
+                    </a>
+                </div>
+                <button class="perfil-botao" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
+                                aria-controls="menuPerfil" aria-label="Abrir menu do perfil">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg>
+                </button>
+            </nav>
+        </header>
+
+
+        <!-- Conteúdo principal -->
+
+        <main class="container pagina px-3 py-4 flex-grow-1" id="conteudo">
+            <section aria-labelledby="tituloPrestadores">
+                <h1 class="visually-hidden" id="tituloPrestadores">Buscar prestadores</h1>
+                <form class="mb-2" id="formBusca" role="search" action="prestadores.html" method="get">
+                    <label class="visually-hidden" for="campoBusca">Buscar prestador</label>
+                    <div class="input-group busca-filtro">
+                        <span class="input-group-text"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg></span>
+                        <input id="campoBusca" name="q" type="search" class="form-control" placeholder="Nome, categoria ou bairro">
+                        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtros" aria-controls="filtros" aria-label="Abrir filtros"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#sliders"></use></svg></button>
+                    </div>
+                </form>
+                <div class="d-flex gap-2 flex-wrap mb-3" aria-label="Filtros rápidos">
+                    <button type="button" class="filtro-chip ativo" data-categoria="">Todos</button>
+                    <button type="button" class="filtro-chip" data-categoria="Eletricista">Eletricista</button>
+                    <button type="button" class="filtro-chip" data-categoria="Encanador">Encanador</button>
+                    <button type="button" class="filtro-chip" data-categoria="Pintor">Pintor</button>
+                </div>
+                <p class="visually-hidden" aria-live="polite" id="resultadoBusca"></p>
+                <div id="listaPrestadores" class="d-grid gap-3">
+<article class="card cartao prestador-card">
+    <div class="card-body">
+        <div class="d-flex align-items-center gap-3">
+            <a href="prestador.html" aria-label="Ver perfil de Carlos Silva"><img src="assets/img/carlos.png" alt="Foto de Carlos Silva" class="foto-media"></a>
+            <div class="flex-grow-1 dados-prestador">
+                <a href="prestador.html" class="nome-prestador">Carlos Silva</a>
+                <div><span class="badge etiqueta">Eletricista Residencial</span></div>
+                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Jardins</small>
+            </div>
+            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Carlos Silva como favorito" ><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </div>
+
+    </div>
+</article>
+<article class="card cartao prestador-card">
+    <div class="card-body">
+        <div class="d-flex align-items-center gap-3">
+            <a href="prestador.html" aria-label="Ver perfil de Mariana Santos"><img src="assets/img/mariana.png" alt="Foto de Mariana Santos" class="foto-media"></a>
+            <div class="flex-grow-1 dados-prestador">
+                <a href="prestador.html" class="nome-prestador">Mariana Santos</a>
+                <div><span class="badge etiqueta">Eletricista</span></div>
+                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Vila Mariana</small>
+            </div>
+            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Mariana Santos como favorito" ><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </div>
+
+    </div>
+</article>
+<article class="card cartao prestador-card">
+    <div class="card-body">
+        <div class="d-flex align-items-center gap-3">
+            <a href="prestador.html" aria-label="Ver perfil de Roberto Ferreira"><img src="assets/img/roberto.png" alt="Foto de Roberto Ferreira" class="foto-media"></a>
+            <div class="flex-grow-1 dados-prestador">
+                <a href="prestador.html" class="nome-prestador">Roberto Ferreira</a>
+                <div><span class="badge etiqueta">Eletricista</span></div>
+                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Pinheiros</small>
+            </div>
+            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Roberto Ferreira como favorito" ><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </div>
+
+    </div>
+</article>
+<article class="card cartao prestador-card">
+    <div class="card-body">
+        <div class="d-flex align-items-center gap-3">
+            <a href="prestador.html" aria-label="Ver perfil de Ana Paula Lima"><img src="assets/img/ana.png" alt="Foto de Ana Paula Lima" class="foto-media"></a>
+            <div class="flex-grow-1 dados-prestador">
+                <a href="prestador.html" class="nome-prestador">Ana Paula Lima</a>
+                <div><span class="badge etiqueta">Eletricista</span></div>
+                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Perdizes</small>
+            </div>
+            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Ana Paula Lima como favorito" ><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </div>
+
+    </div>
+</article>
+<article class="card cartao prestador-card">
+    <div class="card-body">
+        <div class="d-flex align-items-center gap-3">
+            <a href="prestador.html" aria-label="Ver perfil de Carlos Eduardo Mendes"><img src="assets/img/carlos-eduardo.png" alt="Foto de Carlos Eduardo Mendes" class="foto-media"></a>
+            <div class="flex-grow-1 dados-prestador">
+                <a href="prestador.html" class="nome-prestador">Carlos Eduardo Mendes</a>
+                <div><span class="badge etiqueta">Eletricista Residencial</span></div>
+                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Pinheiros</small>
+            </div>
+            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Carlos Eduardo Mendes como favorito" ><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </div>
+
+    </div>
+</article>
+<article class="card cartao prestador-card">
+    <div class="card-body">
+        <div class="d-flex align-items-center gap-3">
+            <a href="prestador.html" aria-label="Ver perfil de Renata Vasconcellos"><img src="assets/img/renata.png" alt="Foto de Renata Vasconcellos" class="foto-media"></a>
+            <div class="flex-grow-1 dados-prestador">
+                <a href="prestador.html" class="nome-prestador">Renata Vasconcellos</a>
+                <div><span class="badge etiqueta">Encanamento & Caça-Vazamento</span></div>
+                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Vila Madalena</small>
+            </div>
+            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Renata Vasconcellos como favorito" ><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </div>
+
+    </div>
+</article>
+<article class="card cartao prestador-card">
+    <div class="card-body">
+        <div class="d-flex align-items-center gap-3">
+            <a href="prestador.html" aria-label="Ver perfil de Marcos Silveira"><img src="assets/img/marcos.png" alt="Foto de Marcos Silveira" class="foto-media"></a>
+            <div class="flex-grow-1 dados-prestador">
+                <a href="prestador.html" class="nome-prestador">Marcos Silveira</a>
+                <div><span class="badge etiqueta">Pintura & Texturas</span></div>
+                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Jardins</small>
+            </div>
+            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Marcos Silveira como favorito" ><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </div>
+
+    </div>
+</article>
+</div>
+
+            </section>
+        </main>
+
+
+        <!-- Rodapé da página -->
+
+        <footer class="rodape-informacoes container pagina px-3 py-3 mt-auto">
+            <span>João Gabriel Camilo</span>
+            <span>Serviços Locais</span>
+        </footer>
+
+
+        <!-- Menu inferior -->
+
+        <div class="rodape">
+            <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
+                <a href="index.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>
+                    <span>Início</span>
+                </a>
+                <a href="prestadores.html" class="atalho ativo" aria-current="page">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg>
+                    <span>Buscar</span>
+                </a>
+                <a href="favoritos.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg>
+                    <span>Favoritos</span>
+                </a>
+                <a href="perfil-cliente.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg>
+                    <span>Perfil</span>
+                </a>
+            </nav>
+        </div>
+
+
+        <!-- Menu do perfil -->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="menuPerfil" aria-labelledby="tituloMenu">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title h5" id="tituloMenu">Minha conta</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <nav class="offcanvas-body d-flex flex-column gap-2" aria-label="Menu do perfil">
+                <a class="btn btn-light text-start" href="perfil-cliente.html">Perfil do cliente</a>
+                <a class="btn btn-light text-start" href="editar-perfil.html">Perfil do prestador</a>
+                <a class="btn btn-light text-start" href="cadastro.html">Sou prestador</a>
+                <a class="btn btn-light text-start" href="favoritos.html">Meus favoritos</a>
+            </nav>
+        </div>
+
+
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

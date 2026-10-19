@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Encontre prestadores de serviços perto de você.">
+        <title>Início | Serviços Locais</title>
+        <link rel="icon" href="assets/img/logo.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+            <nav class="navbar container pagina-barra px-3" aria-label="Navegação principal">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="index.html" class="marca d-flex align-items-center gap-2">
+                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <span>
+                            <strong class="d-block">Serviços Locais</strong>
+                            <small class="d-block">Início</small>
+                        </span>
+                    </a>
+                </div>
+                <button class="perfil-botao" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
+                                aria-controls="menuPerfil" aria-label="Abrir menu do perfil">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg>
+                </button>
+            </nav>
+        </header>
+
+
+        <!-- Conteúdo principal -->
+
+        <main class="container pagina px-3 py-4 flex-grow-1" id="conteudo">
+            <section aria-label="Buscar serviços" class="inicio">
+                <img class="logo-inicio" src="assets/img/logo.png" alt="">
+                <h1 class="visually-hidden">Encontre profissionais perto de você</h1>
+                <form action="prestadores.html" method="get" role="search" class="mb-4">
+                    <label class="visually-hidden" for="pesquisaInicial">Buscar um profissional</label>
+                    <div class="input-group busca-principal">
+                        <span class="input-group-text"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg></span>
+                        <input type="search" id="pesquisaInicial" name="q" class="form-control" placeholder="Buscar pedreiro, encanador, diarista...">
+                        <button type="submit" class="btn btn-light" aria-label="Pesquisar"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#sliders"></use></svg></button>
+                    </div>
+                </form>
+
+                <section aria-labelledby="tituloCategorias">
+                    <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                        <h2 id="tituloCategorias" class="subtitulo mb-0">
+                            <span class="pontinho"></span>
+                            Profissionais ativos no seu bairro
+                        </h2>
+                        <small>Raio: 5 km</small>
+                    </div>
+                    <div class="row g-3 categorias">
+                        <div class="col-4">
+                            <a class="categoria-item" href="prestadores.html?categoria=Pedreiro">
+                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg></span>
+                                <span>Pedreiro</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="categoria-item" href="prestadores.html?categoria=Eletricista">
+                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg></span>
+                                <span>Eletricista</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="categoria-item" href="prestadores.html?categoria=Encanador">
+                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg></span>
+                                <span>Encanador</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="categoria-item" href="prestadores.html?categoria=Diarista">
+                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#broom"></use></svg></span>
+                                <span>Diarista</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="categoria-item" href="prestadores.html?categoria=Pintor">
+                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg></span>
+                                <span>Pintor</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="categoria-item" href="prestadores.html?categoria=Jardineiro">
+                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#seedling"></use></svg></span>
+                                <span>Jardineiro</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <a href="cadastro.html" class="btn btn-primary w-100 botao-destaque mt-5"> <svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#briefcase"></use></svg> Sou prestador </a>
+            </section>
+        </main>
+
+
+        <!-- Rodapé da página -->
+
+        <footer class="rodape-informacoes container pagina px-3 py-3 mt-auto">
+            <span>João Gabriel Camilo</span>
+            <span>Serviços Locais</span>
+        </footer>
+
+
+        <!-- Menu inferior -->
+
+        <div class="rodape">
+            <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
+                <a href="index.html" class="atalho ativo" aria-current="page">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>
+                    <span>Início</span>
+                </a>
+                <a href="prestadores.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg>
+                    <span>Buscar</span>
+                </a>
+                <a href="favoritos.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg>
+                    <span>Favoritos</span>
+                </a>
+                <a href="perfil-cliente.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg>
+                    <span>Perfil</span>
+                </a>
+            </nav>
+        </div>
+
+
+        <!-- Menu do perfil -->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="menuPerfil" aria-labelledby="tituloMenu">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title h5" id="tituloMenu">Minha conta</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <nav class="offcanvas-body d-flex flex-column gap-2" aria-label="Menu do perfil">
+                <a class="btn btn-light text-start" href="perfil-cliente.html">Perfil do cliente</a>
+                <a class="btn btn-light text-start" href="editar-perfil.html">Perfil do prestador</a>
+                <a class="btn btn-light text-start" href="cadastro.html">Sou prestador</a>
+                <a class="btn btn-light text-start" href="favoritos.html">Meus favoritos</a>
+            </nav>
+        </div>
+
+
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

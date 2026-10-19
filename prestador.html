@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Encontre prestadores de serviços perto de você.">
+        <title>Perfil do prestador | Serviços Locais</title>
+        <link rel="icon" href="assets/img/logo.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+            <nav class="navbar container pagina-barra px-3" aria-label="Navegação principal">
+                <div class="d-flex align-items-center gap-2">
+                    <a class="voltar" href="prestadores.html" aria-label="Voltar">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#arrow-left"></use></svg>
+                </a>
+                    <a href="index.html" class="marca d-flex align-items-center gap-2">
+                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <span>
+                            <strong class="d-block">Serviços Locais</strong>
+                            <small class="d-block">Detalhes do Prestador</small>
+                        </span>
+                    </a>
+                </div>
+                <button class="perfil-botao" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
+                                aria-controls="menuPerfil" aria-label="Abrir menu do perfil">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg>
+                </button>
+            </nav>
+        </header>
+
+
+        <!-- Conteúdo principal -->
+
+        <main class="container pagina px-3 py-4 flex-grow-1" id="conteudo">
+            <article aria-labelledby="nomePrestador" class="detalhes">
+                <div class="text-end mb-3">
+                    <label class="curtir"><input type="checkbox" aria-label="Marcar como favorito"><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+                </div>
+                <section class="card cartao mb-3 text-center">
+                    <div class="card-body py-4 px-3">
+                        <img id="fotoPrestador" class="foto-grande mb-2" src="assets/img/carlos.png" alt="Foto do prestador">
+                        <h1 class="h4 mb-2" id="nomePrestador">Carlos Silva</h1>
+                        <span class="badge etiqueta-azul" id="especialidadePrestador"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg> Eletricista Residencial</span>
+                        <div class="row g-0 mt-4 informacoes">
+                            <div class="col-4 borda-direita"><strong><span class="estrela">★</span> <span id="notaPrestador">4,9</span></strong><small>128 avaliações</small></div>
+                            <div class="col-4 borda-direita"><strong id="tempoPrestador">10+ anos</strong><small>Experiência</small></div>
+                            <div class="col-4"><strong><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#shield-halved"></use></svg> 100%</strong><small>Documentado</small></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="card cartao mb-3">
+                    <div class="card-body text-center">
+                        <button type="button" class="btn btn-primary w-100 py-3"> <svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#comment-dots"></use></svg> Chamar no WhatsApp </button>
+                        <small class="d-block mt-2 cor-suave"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#clock"></use></svg> Responde geralmente em menos de 15 minutos</small>
+                    </div>
+                </section>
+                <section class="card cartao mb-3" aria-labelledby="tituloApresentacao">
+                    <div class="card-body p-4">
+                        <h2 id="tituloApresentacao" class="rotulo mb-3"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#quote-left"></use></svg> Apresentação</h2>
+                        <p class="apresentacao mb-3" id="descricaoPrestador">Especialista em instalações elétricas, quadros de força, fiação completa e reparos residenciais com mais de 10 anos de experiência.</p>
+                        <div class="d-flex flex-wrap gap-2"> <span class="badge etiqueta"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#check-circle"></use></svg> Atendimento rápido</span> <span class="badge etiqueta"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#check-circle"></use></svg> Orçamento sem compromisso</span> </div>
+                    </div>
+                </section>
+                <section class="card cartao mb-3" aria-labelledby="tituloRegiao">
+                    <div class="card-body d-flex gap-3 align-items-start">
+                        <span class="icone-fundo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg></span>
+                        <div>
+                            <h2 id="tituloRegiao" class="rotulo mb-1">Região de cobertura</h2>
+                            <strong id="regiaoPrestador">Atende: Pinheiros, Vila Madalena e Região Oeste</strong>
+                            <p class="cor-suave small mb-0">Deslocamento rápido para emergências domiciliares.</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="card cartao h-100">
+                            <div class="card-body small"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#certificate"></use></svg> <span id="especialidadeExtra">Padrão Enel</span><br><span class="cor-suave">Quadros &amp; Disjuntores</span></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card cartao h-100">
+                            <div class="card-body small"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#award"></use></svg> Garantia<br><span class="cor-suave">90 dias no serviço</span></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+
+        <!-- Rodapé da página -->
+
+        <footer class="rodape-informacoes container pagina px-3 py-3 mt-auto">
+            <span>João Gabriel Camilo</span>
+            <span>Serviços Locais</span>
+        </footer>
+
+
+        <!-- Menu inferior -->
+
+        <div class="rodape">
+            <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
+                <a href="index.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>
+                    <span>Início</span>
+                </a>
+                <a href="prestadores.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg>
+                    <span>Buscar</span>
+                </a>
+                <a href="favoritos.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg>
+                    <span>Favoritos</span>
+                </a>
+                <a href="perfil-cliente.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg>
+                    <span>Perfil</span>
+                </a>
+            </nav>
+        </div>
+
+
+        <!-- Menu do perfil -->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="menuPerfil" aria-labelledby="tituloMenu">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title h5" id="tituloMenu">Minha conta</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <nav class="offcanvas-body d-flex flex-column gap-2" aria-label="Menu do perfil">
+                <a class="btn btn-light text-start" href="perfil-cliente.html">Perfil do cliente</a>
+                <a class="btn btn-light text-start" href="editar-perfil.html">Perfil do prestador</a>
+                <a class="btn btn-light text-start" href="cadastro.html">Sou prestador</a>
+                <a class="btn btn-light text-start" href="favoritos.html">Meus favoritos</a>
+            </nav>
+        </div>
+
+
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Encontre prestadores de serviços perto de você.">
+        <title>Editar perfil | Serviços Locais</title>
+        <link rel="icon" href="assets/img/logo.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+            <nav class="navbar container pagina-barra px-3" aria-label="Navegação principal">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="index.html" class="marca d-flex align-items-center gap-2">
+                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <span>
+                            <strong class="d-block">Serviços Locais</strong>
+                            <small class="d-block">Perfil</small>
+                        </span>
+                    </a>
+                </div>
+                <button class="perfil-botao" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
+                                aria-controls="menuPerfil" aria-label="Abrir menu do perfil">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg>
+                </button>
+            </nav>
+        </header>
+
+
+        <!-- Conteúdo principal -->
+
+        <main class="container pagina px-3 py-4 flex-grow-1" id="conteudo">
+            <section aria-labelledby="tituloEdicao">
+                <div class="d-flex align-items-start justify-content-between gap-2 mb-4">
+                    <div>
+                        <h1 id="tituloEdicao" class="h3 mb-1">Editar Perfil</h1>
+                        <p class="cor-suave small mb-0">Atualize sua presença local e dados de contato</p>
+                    </div>
+                    <span class="badge etiqueta"><span class="pontinho"></span> Ativo</span>
+                </div>
+                <div class="card cartao mb-4">
+                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                        <img class="foto-media" src="assets/img/carlos.png" alt="Foto de Carlos Silva">
+                        <div> <strong>Carlos Silva Elétrica</strong> <small class="d-block cor-suave">Membro verificado desde 2023</small> <small class="texto-laranja"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#certificate"></use></svg> Documentos validados</small> </div>
+                    </div>
+                </div>
+                <form id="formEdicao">
+                    <section class="card cartao mb-4" aria-labelledby="sobreVoce">
+                        <div class="card-body p-3 p-sm-4">
+                            <h2 id="sobreVoce" class="h5 mb-3"><svg class="icone texto-laranja me-2" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg> Sobre você</h2>
+                            <label for="nomeEdicao" class="form-label rotulo-campo">Nome profissional</label>
+                            <input id="nomeEdicao" class="form-control mb-3" value="Carlos Silva Elétrica" required>
+                            <label for="telefoneEdicao" class="form-label rotulo-campo">Telefone / WhatsApp</label>
+                            <input id="telefoneEdicao" type="tel" class="form-control" value="(11) 98765-4321" required>
+                        </div>
+                    </section>
+
+                    <section class="card cartao mb-4" aria-labelledby="seuServico">
+                        <div class="card-body p-3 p-sm-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 id="seuServico" class="h5 mb-0"><svg class="icone texto-laranja me-2" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg> Seu serviço</h2>
+                                <small class="cor-suave">Ramo principal</small>
+                            </div>
+                            <p class="form-label rotulo-campo">Categoria selecionada</p>
+                            <fieldset class="border-0 p-0 mb-4">
+                                <legend class="visually-hidden">Categoria</legend>
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <label class="opcao-servico">
+                                            <input type="radio" name="servicoEditado" value="Eletricista" checked>
+                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg><small>Eletricista</small></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="opcao-servico">
+                                            <input type="radio" name="servicoEditado" value="Encanador">
+                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg><small>Encanador</small></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="opcao-servico">
+                                            <input type="radio" name="servicoEditado" value="Pintor">
+                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg><small>Pintor</small></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="descricaoEdicao" class="form-label rotulo-campo">Apresentação rápida</label>
+                                <small class="cor-suave" id="contagemEdicao">0/160</small>
+                            </div>
+                            <textarea id="descricaoEdicao" class="form-control mb-3" rows="3" maxlength="160">Especialista em manutenções elétricas residenciais, quadros de distribuição, tomadas 110/220V e iluminação técnica.</textarea>
+                            <label for="cepEdicao" class="form-label rotulo-campo">Área de cobertura base</label>
+                            <input id="cepEdicao" class="form-control" value="05412-001 - Pinheiros">
+                        </div>
+                    </section>
+                    <button class="btn btn-primary w-100 botao-destaque" type="submit"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#check-circle"></use></svg> Salvar alterações</button>
+                    <div class="text-center mt-4">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#confirmarExclusao"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#trash-can"></use></svg> Excluir cadastro</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+
+        <!-- Rodapé da página -->
+
+        <footer class="rodape-informacoes container pagina px-3 py-3 mt-auto">
+            <span>João Gabriel Camilo</span>
+            <span>Serviços Locais</span>
+        </footer>
+
+
+        <!-- Menu inferior -->
+
+        <div class="rodape">
+            <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
+                <a href="index.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>
+                    <span>Início</span>
+                </a>
+                <a href="prestadores.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg>
+                    <span>Buscar</span>
+                </a>
+                <a href="favoritos.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg>
+                    <span>Favoritos</span>
+                </a>
+                <a href="perfil-cliente.html" class="atalho">
+                    <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg>
+                    <span>Perfil</span>
+                </a>
+            </nav>
+        </div>
+
+
+        <!-- Menu do perfil -->
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="menuPerfil" aria-labelledby="tituloMenu">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title h5" id="tituloMenu">Minha conta</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <nav class="offcanvas-body d-flex flex-column gap-2" aria-label="Menu do perfil">
+                <a class="btn btn-light text-start" href="perfil-cliente.html">Perfil do cliente</a>
+                <a class="btn btn-light text-start" href="editar-perfil.html">Perfil do prestador</a>
+                <a class="btn btn-light text-start" href="cadastro.html">Sou prestador</a>
+                <a class="btn btn-light text-start" href="favoritos.html">Meus favoritos</a>
+            </nav>
+        </div>
+
+
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
