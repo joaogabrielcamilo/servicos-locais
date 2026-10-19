@@ -1,9 +1,31 @@
 {
   "name": "servicos-locais",
   "version": "1.0.0",
-  "private": true,
-  "description": "Serviços Locais - Entrega 2: layout responsivo com Bootstrap 5.3",
+  "description": "## Identificação",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaogabrielcamilo/servicos-locais.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaogabrielcamilo/servicos-locais/issues"
+  },
+  "homepage": "https://github.com/joaogabrielcamilo/servicos-locais#readme",
   "dependencies": {
-    "bootstrap": "5.3.6"
+    "bootstrap": "5.3.6",
+    "jquery": "^4.0.0",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
