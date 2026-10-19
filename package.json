@@ -1,7 +1,7 @@
 {
   "name": "servicos-locais",
   "version": "1.0.0",
-  "description": "## Identificação",
+  "description": "Serviços Locais: plataforma web que conecta moradores a prestadores de serviços do bairro, como pedreiros, eletricistas, encanadores, diaristas, pintores e jardineiros.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/joaogabrielcamilo/servicos-locais#readme",
   "dependencies": {
-    "bootstrap": "5.3.6",
+    "bootstrap": "5.3.8",
     "jquery": "^4.0.0",
     "uuid": "^14.0.2"
   },
