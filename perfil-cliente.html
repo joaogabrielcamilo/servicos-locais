@@ -22,12 +22,18 @@
                     <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#arrow-left"></use></svg>
                 </a>
                     <a href="index.html" class="marca d-flex align-items-center gap-2">
-                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <picture><source srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" type="image/webp"><img src="assets/img/logo.png" alt="" width="32" height="32"></picture>
                         <span>
                             <strong class="d-block">Serviços Locais</strong>
                             <small class="d-block">Cadastro de Cliente</small>
                         </span>
                     </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-1 ms-auto me-3">
+                    <a href="index.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg> Início</a>
+                    <a href="prestadores.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg> Buscar</a>
+                    <a href="favoritos.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg> Favoritos</a>
+                    <a href="perfil-cliente.html" class="link-topo ativo" aria-current="page"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg> Perfil</a>
                 </div>
                 <button class="perfil-botao" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
@@ -42,74 +48,86 @@
 
         <main class="container pagina px-3 py-4 flex-grow-1" id="conteudo">
             <section aria-labelledby="tituloCliente">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <span class="avatar-cliente"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg></span>
-                    <div class="flex-grow-1">
-                        <h1 id="tituloCliente" class="h5 mb-1">Juliana Martins</h1>
-                        <small class="cor-suave"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Moradora de Pinheiros • Desde 2024</small>
-                    </div>
-                    <button type="button" class="botao-editar" aria-label="Editar dados da cliente"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#pen"></use></svg></button>
-                </div>
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="lateral-fixa">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <span class="avatar-cliente"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg></span>
+                                <div class="flex-grow-1">
+                                    <h1 id="tituloCliente" class="h5 mb-1">Juliana Martins</h1>
+                                    <small class="cor-suave"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Moradora de Pinheiros • Desde 2024</small>
+                                </div>
+                                <button type="button" class="botao-editar" data-bs-toggle="modal" data-bs-target="#modalDadosCliente" aria-label="Editar dados da cliente"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#pen"></use></svg></button>
+                            </div>
 
-                <section class="card cartao mb-4" aria-labelledby="tituloDados">
-                    <div class="card-body p-3">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h2 id="tituloDados" class="h6 mb-0"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg> Meus dados</h2>
-                            <button type="button" class="btn btn-sm btn-light"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#pen"></use></svg> Editar</button>
+                            <section class="card cartao" aria-labelledby="tituloDados">
+                                <div class="card-body p-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h2 id="tituloDados" class="h6 mb-0"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg> Meus dados</h2>
+                                        <button type="button" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#modalDadosCliente"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#pen"></use></svg> Editar</button>
+                                    </div>
+                                    <dl class="dados-cliente list-group mb-0">
+                                        <div class="dados-linha list-group-item">
+                                            <dt>Nome completo</dt>
+                                            <dd>Juliana Martins</dd>
+                                        </div>
+                                        <div class="dados-linha list-group-item">
+                                            <dt>WhatsApp / Contato</dt>
+                                            <dd>(11) 98123-4567</dd>
+                                        </div>
+                                        <div class="dados-linha list-group-item">
+                                            <dt>Bairro e Cidade</dt>
+                                            <dd>São Paulo - Pinheiros</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </section>
                         </div>
-                        <dl class="dados-cliente list-group mb-0">
-                            <div class="dados-linha list-group-item">
-                                <dt>Nome completo</dt>
-                                <dd>Juliana Martins</dd>
-                            </div>
-                            <div class="dados-linha list-group-item">
-                                <dt>WhatsApp / Contato</dt>
-                                <dd>(11) 98123-4567</dd>
-                            </div>
-                            <div class="dados-linha list-group-item">
-                                <dt>Bairro e Cidade</dt>
-                                <dd>São Paulo - Pinheiros</dd>
-                            </div>
-                        </dl>
                     </div>
-                </section>
 
-                <section aria-labelledby="favoritosClienteTitulo" class="pt-3 borda-topo">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h2 id="favoritosClienteTitulo" class="h5 mb-0">Meus favoritos <span class="badge etiqueta-azul" id="totalCliente">3</span></h2>
-                        <a href="favoritos.html" class="link-laranja small">Ver todos <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#angle-right"></use></svg></a>
+                    <div class="col-lg-7">
+                        <section aria-labelledby="favoritosClienteTitulo" class="pt-3 pt-lg-0 borda-topo">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 id="favoritosClienteTitulo" class="h5 mb-0">Meus favoritos <span class="badge etiqueta-azul" id="totalCliente">3</span></h2>
+                                <a href="favoritos.html" class="link-laranja small">Ver todos <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#angle-right"></use></svg></a>
+                            </div>
+                            <div id="favoritosCliente" class="row row-cols-1 row-cols-md-2 row-cols-lg-1 row-cols-xl-2 g-3">
+        <div class="col">
+        <article class="card cartao prestador-card h-100">
+            <div class="card-body">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="prestador.html" aria-label="Ver perfil de Carlos Eduardo Mendes"><picture><source srcset="assets/img/carlos-eduardo.webp" type="image/webp"><img src="assets/img/carlos-eduardo.png" alt="Foto de Carlos Eduardo Mendes" class="foto-media" width="54" height="54" loading="lazy" decoding="async"></picture></a>
+                    <div class="flex-grow-1 dados-prestador">
+                        <a href="prestador.html" class="nome-prestador">Carlos Eduardo Mendes</a>
+                        <div><span class="badge etiqueta">Eletricista Residencial</span></div>
+                        <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Pinheiros</small>
                     </div>
-                    <div id="favoritosCliente" class="d-grid gap-3">
-<article class="card cartao prestador-card">
-    <div class="card-body">
-        <div class="d-flex align-items-center gap-3">
-            <a href="prestador.html" aria-label="Ver perfil de Carlos Eduardo Mendes"><img src="assets/img/carlos-eduardo.png" alt="Foto de Carlos Eduardo Mendes" class="foto-media"></a>
-            <div class="flex-grow-1 dados-prestador">
-                <a href="prestador.html" class="nome-prestador">Carlos Eduardo Mendes</a>
-                <div><span class="badge etiqueta">Eletricista Residencial</span></div>
-                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Pinheiros</small>
+                    <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Carlos Eduardo Mendes como favorito" checked><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+                </div>
+                <div class="mt-3 d-flex justify-content-between align-items-center"><small>Orçamento: Sob consulta</small><a class="btn btn-primary btn-sm" href="prestador.html">Ver perfil</a></div>
             </div>
-            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Carlos Eduardo Mendes como favorito" checked><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </article>
         </div>
-        <div class="mt-3 d-flex justify-content-between align-items-center"><small>Orçamento: Sob consulta</small><a class="btn btn-primary btn-sm" href="prestador.html">Ver perfil</a></div>
-    </div>
-</article>
-<article class="card cartao prestador-card">
-    <div class="card-body">
-        <div class="d-flex align-items-center gap-3">
-            <a href="prestador.html" aria-label="Ver perfil de Renata Vasconcellos"><img src="assets/img/renata.png" alt="Foto de Renata Vasconcellos" class="foto-media"></a>
-            <div class="flex-grow-1 dados-prestador">
-                <a href="prestador.html" class="nome-prestador">Renata Vasconcellos</a>
-                <div><span class="badge etiqueta">Encanamento & Caça-Vazamento</span></div>
-                <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Vila Madalena</small>
+        <div class="col">
+        <article class="card cartao prestador-card h-100">
+            <div class="card-body">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="prestador.html" aria-label="Ver perfil de Renata Vasconcellos"><picture><source srcset="assets/img/renata.webp" type="image/webp"><img src="assets/img/renata.png" alt="Foto de Renata Vasconcellos" class="foto-media" width="54" height="54" loading="lazy" decoding="async"></picture></a>
+                    <div class="flex-grow-1 dados-prestador">
+                        <a href="prestador.html" class="nome-prestador">Renata Vasconcellos</a>
+                        <div><span class="badge etiqueta">Encanamento & Caça-Vazamento</span></div>
+                        <small class="dados-menores"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#location-dot"></use></svg> Vila Madalena</small>
+                    </div>
+                    <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Renata Vasconcellos como favorito" checked><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+                </div>
+                <div class="mt-3 d-flex justify-content-between align-items-center"><small>Orçamento: Sob consulta</small><a class="btn btn-primary btn-sm" href="prestador.html">Ver perfil</a></div>
             </div>
-            <label class="curtir" title="Marcar favorito"><input type="checkbox" aria-label="Marcar Renata Vasconcellos como favorito" checked><span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg></span></label>
+        </article>
         </div>
-        <div class="mt-3 d-flex justify-content-between align-items-center"><small>Orçamento: Sob consulta</small><a class="btn btn-primary btn-sm" href="prestador.html">Ver perfil</a></div>
-    </div>
-</article>
-</div>
-                </section>
+        </div>
+                        </section>
+                    </div>
+                </div>
             </section>
         </main>
 
@@ -124,7 +142,7 @@
 
         <!-- Menu inferior -->
 
-        <div class="rodape">
+        <div class="rodape d-lg-none">
             <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
                 <a href="index.html" class="atalho">
                     <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>
@@ -159,6 +177,50 @@
                 <a class="btn btn-light text-start" href="cadastro.html">Sou prestador</a>
                 <a class="btn btn-light text-start" href="favoritos.html">Meus favoritos</a>
             </nav>
+        </div>
+
+
+        <!-- Modal de edição dos dados do cliente -->
+
+        <div class="modal fade" id="modalDadosCliente" tabindex="-1" aria-labelledby="tituloModalDados" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <form class="modal-content" id="formDadosCliente">
+                    <div class="modal-header border-0">
+                        <h2 class="modal-title h5" id="tituloModalDados">Editar meus dados</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="nomeCliente" class="form-label rotulo-campo">Nome completo</label>
+                        <input id="nomeCliente" name="nome" class="form-control mb-3" value="Juliana Martins" maxlength="80" required>
+                        <label for="telefoneCliente" class="form-label rotulo-campo">WhatsApp / Contato</label>
+                        <input id="telefoneCliente" name="telefone" type="tel" class="form-control mb-3" value="(11) 98123-4567" required>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="cidadeCliente" class="form-label rotulo-campo">Cidade</label>
+                                <select id="cidadeCliente" name="cidade" class="form-select">
+                                    <option selected>São Paulo</option>
+                                    <option>Guarulhos</option>
+                                    <option>Osasco</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="bairroCliente" class="form-label rotulo-campo">Bairro</label>
+                                <select id="bairroCliente" name="bairro" class="form-select">
+                                    <option>Jardins</option>
+                                    <option>Perdizes</option>
+                                    <option selected>Pinheiros</option>
+                                    <option>Vila Madalena</option>
+                                    <option>Vila Mariana</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
 

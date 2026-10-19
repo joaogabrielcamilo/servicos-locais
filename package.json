@@ -2,7 +2,7 @@
   "name": "servicos-locais",
   "version": "1.0.0",
   "private": true,
-  "description": "Atividade 08 - Layout do protótipo com Bootstrap 5.3",
+  "description": "Serviços Locais - Entrega 2: layout responsivo com Bootstrap 5.3",
   "dependencies": {
     "bootstrap": "5.3.6"
   }

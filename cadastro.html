@@ -22,12 +22,18 @@
                     <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#arrow-left"></use></svg>
                 </a>
                     <a href="index.html" class="marca d-flex align-items-center gap-2">
-                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <picture><source srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" type="image/webp"><img src="assets/img/logo.png" alt="" width="32" height="32"></picture>
                         <span>
                             <strong class="d-block">Serviços Locais</strong>
                             <small class="d-block">Cadastro de Prestador</small>
                         </span>
                     </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-1 ms-auto me-3">
+                    <a href="index.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg> Início</a>
+                    <a href="prestadores.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg> Buscar</a>
+                    <a href="favoritos.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg> Favoritos</a>
+                    <a href="perfil-cliente.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg> Perfil</a>
                 </div>
                 <button class="perfil-botao" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
@@ -45,74 +51,79 @@
                 <p class="rotulo azul mb-1">Passo 1 de 2</p>
                 <h1 id="tituloCadastro" class="h4 mb-4">Cadastro de Profissional</h1>
                 <form id="formCadastro">
-                    <fieldset class="border-0 p-0 mb-4">
-                        <legend class="h6 mb-3"><svg class="icone me-2 texto-laranja" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg> Sobre você</legend>
-                        <div class="card cartao">
-                            <div class="card-body p-3">
-                                <label for="nomeCadastro" class="form-label">Nome completo</label>
-                                <input id="nomeCadastro" name="nome" class="form-control mb-3" placeholder="Seu nome ou da empresa" required>
-                                <label for="telefoneCadastro" class="form-label">Telefone / WhatsApp</label>
-                                <input id="telefoneCadastro" name="telefone" class="form-control" placeholder="(11) 99999-9999" type="tel" required>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="border-0 p-0">
-                        <legend class="h6 mb-3"><svg class="icone me-2 texto-laranja" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg> Seu serviço</legend>
-                        <div class="card cartao">
-                            <div class="card-body p-3">
-                                <p class="form-label">Especialidade principal</p>
-                                <div class="row g-2 mb-4">
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="categoria" value="Pedreiro" required>
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg><small>Pedreiro</small></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="categoria" value="Eletricista" checked required>
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg><small>Eletricista</small></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="categoria" value="Encanador" required>
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg><small>Encanador</small></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="categoria" value="Diarista" required>
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#broom"></use></svg><small>Diarista</small></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="categoria" value="Pintor" required>
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg><small>Pintor</small></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="categoria" value="Jardineiro" required>
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#seedling"></use></svg><small>Jardineiro</small></span>
-                                        </label>
+                    <div class="row g-4">
+                        <div class="col-lg-5">
+                            <fieldset class="border-0 p-0">
+                                <legend class="h6 mb-3"><svg class="icone me-2 texto-laranja" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg> Sobre você</legend>
+                                <div class="card cartao">
+                                    <div class="card-body p-3">
+                                        <label for="nomeCadastro" class="form-label">Nome completo</label>
+                                        <input id="nomeCadastro" name="nome" class="form-control mb-3" placeholder="Seu nome ou da empresa" required>
+                                        <label for="telefoneCadastro" class="form-label">Telefone / WhatsApp</label>
+                                        <input id="telefoneCadastro" name="telefone" class="form-control" placeholder="(11) 99999-9999" type="tel" required>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <label for="descricaoCadastro" class="form-label">Descrição curta</label>
-                                    <small class="cor-suave" id="contagemCadastro">0/160</small>
-                                </div>
-                                <textarea id="descricaoCadastro" name="descricao" class="form-control mb-2" rows="3" maxlength="160" placeholder="Breve resumo dos seus serviços..." required></textarea>
-                                <label for="cepCadastro" class="form-label mt-3">CEP de atendimento</label>
-                                <input id="cepCadastro" name="cep" class="form-control" inputmode="numeric" placeholder="00000-000" maxlength="9" required>
-                                <div class="alert alert-light aviso-cadastro mt-2 mb-0" role="status">O endereço será preenchido em uma etapa futura.</div>
-                            </div>
+                            </fieldset>
                         </div>
-                    </fieldset>
-                    <button type="submit" class="btn btn-primary w-100 botao-destaque mt-4">Criar meu perfil <svg class="icone ms-2" aria-hidden="true"><use href="assets/img/icones.svg#arrow-right"></use></svg></button>
-                    <p class="text-center cor-suave small mt-2"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#shield-halved"></use></svg> Ambiente seguro da vizinhança</p>
+                        <div class="col-lg-7">
+                            <fieldset class="border-0 p-0">
+                                <legend class="h6 mb-3"><svg class="icone me-2 texto-laranja" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg> Seu serviço</legend>
+                                <div class="card cartao">
+                                    <div class="card-body p-3">
+                                        <p class="form-label">Especialidade principal</p>
+                                        <div class="row g-2 mb-4">
+                                            <div class="col-4 col-md-2 col-lg-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="categoria" value="Pedreiro" required>
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg><small>Pedreiro</small></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-lg-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="categoria" value="Eletricista" checked required>
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg><small>Eletricista</small></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-lg-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="categoria" value="Encanador" required>
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg><small>Encanador</small></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-lg-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="categoria" value="Diarista" required>
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#broom"></use></svg><small>Diarista</small></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-lg-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="categoria" value="Pintor" required>
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg><small>Pintor</small></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-lg-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="categoria" value="Jardineiro" required>
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#seedling"></use></svg><small>Jardineiro</small></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <label for="descricaoCadastro" class="form-label">Descrição curta</label>
+                                            <small class="cor-suave" id="contagemCadastro">0/160</small>
+                                        </div>
+                                        <textarea id="descricaoCadastro" name="descricao" class="form-control mb-2" rows="3" maxlength="160" placeholder="Breve resumo dos seus serviços..." required></textarea>
+                                        <label for="cepCadastro" class="form-label mt-3">CEP de atendimento</label>
+                                        <input id="cepCadastro" name="cep" class="form-control" inputmode="numeric" placeholder="00000-000" maxlength="9" required>
+                                        <div class="alert alert-light aviso-cadastro mt-2 mb-0" role="status">O endereço será preenchido em uma etapa futura.</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary w-100 botao-destaque mt-4">Criar meu perfil <svg class="icone ms-2" aria-hidden="true"><use href="assets/img/icones.svg#arrow-right"></use></svg></button>
+                            <p class="text-center cor-suave small mt-2"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#shield-halved"></use></svg> Ambiente seguro da vizinhança</p>
+                        </div>
+                    </div>
                 </form>
             </section>
         </main>
@@ -128,7 +139,7 @@
 
         <!-- Menu inferior -->
 
-        <div class="rodape">
+        <div class="rodape d-lg-none">
             <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
                 <a href="index.html" class="atalho">
                     <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>

@@ -19,12 +19,18 @@
             <nav class="navbar container pagina-barra px-3" aria-label="Navegação principal">
                 <div class="d-flex align-items-center gap-2">
                     <a href="index.html" class="marca d-flex align-items-center gap-2">
-                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <picture><source srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" type="image/webp"><img src="assets/img/logo.png" alt="" width="32" height="32"></picture>
                         <span>
                             <strong class="d-block">Serviços Locais</strong>
                             <small class="d-block">Perfil</small>
                         </span>
                     </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-1 ms-auto me-3">
+                    <a href="index.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg> Início</a>
+                    <a href="prestadores.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg> Buscar</a>
+                    <a href="favoritos.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg> Favoritos</a>
+                    <a href="perfil-cliente.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg> Perfil</a>
                 </div>
                 <button class="perfil-botao" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
@@ -48,63 +54,74 @@
                 </div>
                 <div class="card cartao mb-4">
                     <div class="card-body d-flex align-items-center gap-3 p-3">
-                        <img class="foto-media" src="assets/img/carlos.png" alt="Foto de Carlos Silva">
+                        <picture><source srcset="assets/img/carlos.webp" type="image/webp"><img class="foto-media" src="assets/img/carlos.png" alt="Foto de Carlos Silva" width="54" height="54" loading="lazy" decoding="async"></picture>
                         <div> <strong>Carlos Silva Elétrica</strong> <small class="d-block cor-suave">Membro verificado desde 2023</small> <small class="texto-laranja"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#certificate"></use></svg> Documentos validados</small> </div>
                     </div>
                 </div>
                 <form id="formEdicao">
-                    <section class="card cartao mb-4" aria-labelledby="sobreVoce">
-                        <div class="card-body p-3 p-sm-4">
-                            <h2 id="sobreVoce" class="h5 mb-3"><svg class="icone texto-laranja me-2" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg> Sobre você</h2>
-                            <label for="nomeEdicao" class="form-label rotulo-campo">Nome profissional</label>
-                            <input id="nomeEdicao" class="form-control mb-3" value="Carlos Silva Elétrica" required>
-                            <label for="telefoneEdicao" class="form-label rotulo-campo">Telefone / WhatsApp</label>
-                            <input id="telefoneEdicao" type="tel" class="form-control" value="(11) 98765-4321" required>
-                        </div>
-                    </section>
-
-                    <section class="card cartao mb-4" aria-labelledby="seuServico">
-                        <div class="card-body p-3 p-sm-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h2 id="seuServico" class="h5 mb-0"><svg class="icone texto-laranja me-2" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg> Seu serviço</h2>
-                                <small class="cor-suave">Ramo principal</small>
-                            </div>
-                            <p class="form-label rotulo-campo">Categoria selecionada</p>
-                            <fieldset class="border-0 p-0 mb-4">
-                                <legend class="visually-hidden">Categoria</legend>
-                                <div class="row g-2">
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="servicoEditado" value="Eletricista" checked>
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg><small>Eletricista</small></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="servicoEditado" value="Encanador">
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg><small>Encanador</small></span>
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="opcao-servico">
-                                            <input type="radio" name="servicoEditado" value="Pintor">
-                                            <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg><small>Pintor</small></span>
-                                        </label>
-                                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <section class="card cartao h-100" aria-labelledby="sobreVoce">
+                                <div class="card-body p-3 p-sm-4">
+                                    <h2 id="sobreVoce" class="h5 mb-3"><svg class="icone texto-laranja me-2" aria-hidden="true"><use href="assets/img/icones.svg#user"></use></svg> Sobre você</h2>
+                                    <label for="nomeEdicao" class="form-label rotulo-campo">Nome profissional</label>
+                                    <input id="nomeEdicao" class="form-control mb-3" value="Carlos Silva Elétrica" required>
+                                    <label for="telefoneEdicao" class="form-label rotulo-campo">Telefone / WhatsApp</label>
+                                    <input id="telefoneEdicao" type="tel" class="form-control" value="(11) 98765-4321" required>
                                 </div>
-                            </fieldset>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <label for="descricaoEdicao" class="form-label rotulo-campo">Apresentação rápida</label>
-                                <small class="cor-suave" id="contagemEdicao">0/160</small>
-                            </div>
-                            <textarea id="descricaoEdicao" class="form-control mb-3" rows="3" maxlength="160">Especialista em manutenções elétricas residenciais, quadros de distribuição, tomadas 110/220V e iluminação técnica.</textarea>
-                            <label for="cepEdicao" class="form-label rotulo-campo">Área de cobertura base</label>
-                            <input id="cepEdicao" class="form-control" value="05412-001 - Pinheiros">
+                            </section>
                         </div>
-                    </section>
-                    <button class="btn btn-primary w-100 botao-destaque" type="submit"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#check-circle"></use></svg> Salvar alterações</button>
-                    <div class="text-center mt-4">
-                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#confirmarExclusao"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#trash-can"></use></svg> Excluir cadastro</button>
+                        <div class="col-lg-6">
+                            <section class="card cartao h-100" aria-labelledby="seuServico">
+                                <div class="card-body p-3 p-sm-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h2 id="seuServico" class="h5 mb-0"><svg class="icone texto-laranja me-2" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg> Seu serviço</h2>
+                                        <small class="cor-suave">Ramo principal</small>
+                                    </div>
+                                    <p class="form-label rotulo-campo">Categoria selecionada</p>
+                                    <fieldset class="border-0 p-0 mb-4">
+                                        <legend class="visually-hidden">Categoria</legend>
+                                        <div class="row g-2">
+                                            <div class="col-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="servicoEditado" value="Eletricista" checked>
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg><small>Eletricista</small></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="servicoEditado" value="Encanador">
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg><small>Encanador</small></span>
+                                                </label>
+                                            </div>
+                                            <div class="col-4">
+                                                <label class="opcao-servico">
+                                                    <input type="radio" name="servicoEditado" value="Pintor">
+                                                    <span><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg><small>Pintor</small></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="descricaoEdicao" class="form-label rotulo-campo">Apresentação rápida</label>
+                                        <small class="cor-suave" id="contagemEdicao">0/160</small>
+                                    </div>
+                                    <textarea id="descricaoEdicao" class="form-control mb-3" rows="3" maxlength="160">Especialista em manutenções elétricas residenciais, quadros de distribuição, tomadas 110/220V e iluminação técnica.</textarea>
+                                    <label for="cepEdicao" class="form-label rotulo-campo">Área de cobertura base</label>
+                                    <input id="cepEdicao" class="form-control" value="05412-001 - Pinheiros">
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-12">
+                            <div class="row g-3 flex-md-row-reverse align-items-center">
+                                <div class="col-md-auto">
+                                    <button class="btn btn-primary w-100 botao-destaque px-md-5" type="submit"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#check-circle"></use></svg> Salvar alterações</button>
+                                </div>
+                                <div class="col-md-auto text-center">
+                                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#confirmarExclusao"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#trash-can"></use></svg> Excluir cadastro</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </section>
@@ -121,7 +138,7 @@
 
         <!-- Menu inferior -->
 
-        <div class="rodape">
+        <div class="rodape d-lg-none">
             <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
                 <a href="index.html" class="atalho">
                     <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>
@@ -156,6 +173,27 @@
                 <a class="btn btn-light text-start" href="cadastro.html">Sou prestador</a>
                 <a class="btn btn-light text-start" href="favoritos.html">Meus favoritos</a>
             </nav>
+        </div>
+
+
+        <!-- Modal de confirmação de exclusão -->
+
+        <div class="modal fade" id="confirmarExclusao" tabindex="-1" aria-labelledby="tituloExclusao" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h2 class="modal-title h5" id="tituloExclusao">Excluir cadastro?</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="cor-suave mb-0">Seu perfil deixará de aparecer nas buscas e seus dados de contato serão apagados. Essa ação não pode ser desfeita.</p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Sim, excluir</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
 

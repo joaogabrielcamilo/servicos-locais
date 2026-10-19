@@ -19,12 +19,18 @@
             <nav class="navbar container pagina-barra px-3" aria-label="Navegação principal">
                 <div class="d-flex align-items-center gap-2">
                     <a href="index.html" class="marca d-flex align-items-center gap-2">
-                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <picture><source srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" type="image/webp"><img src="assets/img/logo.png" alt="" width="32" height="32"></picture>
                         <span>
                             <strong class="d-block">Serviços Locais</strong>
                             <small class="d-block">Início</small>
                         </span>
                     </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-1 ms-auto me-3">
+                    <a href="index.html" class="link-topo ativo" aria-current="page"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg> Início</a>
+                    <a href="prestadores.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg> Buscar</a>
+                    <a href="favoritos.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg> Favoritos</a>
+                    <a href="perfil-cliente.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg> Perfil</a>
                 </div>
                 <button class="perfil-botao" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
@@ -39,65 +45,73 @@
 
         <main class="container pagina px-3 py-4 flex-grow-1" id="conteudo">
             <section aria-label="Buscar serviços" class="inicio">
-                <img class="logo-inicio" src="assets/img/logo.png" alt="">
-                <h1 class="visually-hidden">Encontre profissionais perto de você</h1>
-                <form action="prestadores.html" method="get" role="search" class="mb-4">
-                    <label class="visually-hidden" for="pesquisaInicial">Buscar um profissional</label>
-                    <div class="input-group busca-principal">
-                        <span class="input-group-text"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg></span>
-                        <input type="search" id="pesquisaInicial" name="q" class="form-control" placeholder="Buscar pedreiro, encanador, diarista...">
-                        <button type="submit" class="btn btn-light" aria-label="Pesquisar"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#sliders"></use></svg></button>
+                <div class="row g-4 g-lg-5 align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <picture><source srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" type="image/webp"><img class="logo-inicio" src="assets/img/logo.png" alt="" width="55" height="55"></picture>
+                        <h1 class="titulo-inicio mb-lg-3">Encontre profissionais perto de você</h1>
+                        <p class="cor-suave d-none d-lg-block mb-4">Pedreiros, eletricistas, diaristas e outros prestadores de confiança no seu bairro.</p>
+                        <form action="prestadores.html" method="get" role="search" class="mb-0 mb-lg-4">
+                            <label class="visually-hidden" for="pesquisaInicial">Buscar um profissional</label>
+                            <div class="input-group busca-principal">
+                                <span class="input-group-text"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg></span>
+                                <input type="search" id="pesquisaInicial" name="q" class="form-control" placeholder="Buscar pedreiro, encanador, diarista...">
+                                <button type="submit" class="btn btn-light" aria-label="Pesquisar"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#sliders"></use></svg></button>
+                            </div>
+                        </form>
+                        <a href="cadastro.html" class="btn btn-primary w-100 botao-destaque d-none d-lg-flex align-items-center justify-content-center"><svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#briefcase"></use></svg> Sou prestador</a>
                     </div>
-                </form>
 
-                <section aria-labelledby="tituloCategorias">
-                    <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
-                        <h2 id="tituloCategorias" class="subtitulo mb-0">
-                            <span class="pontinho"></span>
-                            Profissionais ativos no seu bairro
-                        </h2>
-                        <small>Raio: 5 km</small>
+                    <div class="col-12 col-lg-6">
+                        <section aria-labelledby="tituloCategorias">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <h2 id="tituloCategorias" class="subtitulo mb-0">
+                                    <span class="pontinho"></span>
+                                    Profissionais ativos no seu bairro
+                                </h2>
+                                <small>Raio: 5 km</small>
+                            </div>
+                            <div class="row g-3 categorias">
+                                <div class="col-4 col-md-2 col-lg-4">
+                                    <a class="categoria-item" href="prestadores.html?categoria=Pedreiro">
+                                        <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg></span>
+                                        <span>Pedreiro</span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-md-2 col-lg-4">
+                                    <a class="categoria-item" href="prestadores.html?categoria=Eletricista">
+                                        <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg></span>
+                                        <span>Eletricista</span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-md-2 col-lg-4">
+                                    <a class="categoria-item" href="prestadores.html?categoria=Encanador">
+                                        <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg></span>
+                                        <span>Encanador</span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-md-2 col-lg-4">
+                                    <a class="categoria-item" href="prestadores.html?categoria=Diarista">
+                                        <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#broom"></use></svg></span>
+                                        <span>Diarista</span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-md-2 col-lg-4">
+                                    <a class="categoria-item" href="prestadores.html?categoria=Pintor">
+                                        <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg></span>
+                                        <span>Pintor</span>
+                                    </a>
+                                </div>
+                                <div class="col-4 col-md-2 col-lg-4">
+                                    <a class="categoria-item" href="prestadores.html?categoria=Jardineiro">
+                                        <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#seedling"></use></svg></span>
+                                        <span>Jardineiro</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                        <a href="cadastro.html" class="btn btn-primary w-100 botao-destaque mt-5 d-lg-none"> <svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#briefcase"></use></svg> Sou prestador </a>
                     </div>
-                    <div class="row g-3 categorias">
-                        <div class="col-4">
-                            <a class="categoria-item" href="prestadores.html?categoria=Pedreiro">
-                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#screwdriver-wrench"></use></svg></span>
-                                <span>Pedreiro</span>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a class="categoria-item" href="prestadores.html?categoria=Eletricista">
-                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#bolt"></use></svg></span>
-                                <span>Eletricista</span>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a class="categoria-item" href="prestadores.html?categoria=Encanador">
-                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#hammer"></use></svg></span>
-                                <span>Encanador</span>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a class="categoria-item" href="prestadores.html?categoria=Diarista">
-                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#broom"></use></svg></span>
-                                <span>Diarista</span>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a class="categoria-item" href="prestadores.html?categoria=Pintor">
-                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#paint-roller"></use></svg></span>
-                                <span>Pintor</span>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a class="categoria-item" href="prestadores.html?categoria=Jardineiro">
-                                <span class="circulo-icone"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#seedling"></use></svg></span>
-                                <span>Jardineiro</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <a href="cadastro.html" class="btn btn-primary w-100 botao-destaque mt-5"> <svg class="icone me-2" aria-hidden="true"><use href="assets/img/icones.svg#briefcase"></use></svg> Sou prestador </a>
+                </div>
             </section>
         </main>
 
@@ -112,7 +126,7 @@
 
         <!-- Menu inferior -->
 
-        <div class="rodape">
+        <div class="rodape d-lg-none">
             <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
                 <a href="index.html" class="atalho ativo" aria-current="page">
                     <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>

@@ -19,12 +19,18 @@
             <nav class="navbar container pagina-barra px-3" aria-label="Navegação principal">
                 <div class="d-flex align-items-center gap-2">
                     <a href="index.html" class="marca d-flex align-items-center gap-2">
-                        <img src="assets/img/logo.png" alt="" width="32" height="32">
+                        <picture><source srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" type="image/webp"><img src="assets/img/logo.png" alt="" width="32" height="32"></picture>
                         <span>
                             <strong class="d-block">Serviços Locais</strong>
                             <small class="d-block">Favoritos</small>
                         </span>
                     </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-1 ms-auto me-3">
+                    <a href="index.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg> Início</a>
+                    <a href="prestadores.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#magnifying-glass"></use></svg> Buscar</a>
+                    <a href="favoritos.html" class="link-topo ativo" aria-current="page"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#heart"></use></svg> Favoritos</a>
+                    <a href="perfil-cliente.html" class="link-topo"><svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#id-card"></use></svg> Perfil</a>
                 </div>
                 <button class="perfil-botao" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#menuPerfil"
@@ -52,11 +58,12 @@
                     <button type="button" class="filtro-chip" data-filtro-favorito="Encanador">Encanamento</button>
                     <button type="button" class="filtro-chip" data-filtro-favorito="Pintor">Pintura</button>
                 </div>
-                <div id="listaFavoritos" class="d-grid gap-3">
-<article class="card cartao prestador-card">
+                <div id="listaFavoritos" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
+<div class="col">
+<article class="card cartao prestador-card h-100">
     <div class="card-body">
         <div class="d-flex align-items-center gap-3">
-            <a href="prestador.html" aria-label="Ver perfil de Carlos Eduardo Mendes"><img src="assets/img/carlos-eduardo.png" alt="Foto de Carlos Eduardo Mendes" class="foto-media"></a>
+            <a href="prestador.html" aria-label="Ver perfil de Carlos Eduardo Mendes"><picture><source srcset="assets/img/carlos-eduardo.webp" type="image/webp"><img src="assets/img/carlos-eduardo.png" alt="Foto de Carlos Eduardo Mendes" class="foto-media" width="54" height="54" loading="lazy" decoding="async"></picture></a>
             <div class="flex-grow-1 dados-prestador">
                 <a href="prestador.html" class="nome-prestador">Carlos Eduardo Mendes</a>
                 <div><span class="badge etiqueta">Eletricista Residencial</span></div>
@@ -67,10 +74,12 @@
         <div class="mt-3 d-flex justify-content-between align-items-center"><small>Orçamento: Sob consulta</small><a class="btn btn-primary btn-sm" href="prestador.html">Ver perfil</a></div>
     </div>
 </article>
-<article class="card cartao prestador-card">
+</div>
+<div class="col">
+<article class="card cartao prestador-card h-100">
     <div class="card-body">
         <div class="d-flex align-items-center gap-3">
-            <a href="prestador.html" aria-label="Ver perfil de Renata Vasconcellos"><img src="assets/img/renata.png" alt="Foto de Renata Vasconcellos" class="foto-media"></a>
+            <a href="prestador.html" aria-label="Ver perfil de Renata Vasconcellos"><picture><source srcset="assets/img/renata.webp" type="image/webp"><img src="assets/img/renata.png" alt="Foto de Renata Vasconcellos" class="foto-media" width="54" height="54" loading="lazy" decoding="async"></picture></a>
             <div class="flex-grow-1 dados-prestador">
                 <a href="prestador.html" class="nome-prestador">Renata Vasconcellos</a>
                 <div><span class="badge etiqueta">Encanamento & Caça-Vazamento</span></div>
@@ -81,10 +90,12 @@
         <div class="mt-3 d-flex justify-content-between align-items-center"><small>Orçamento: Sob consulta</small><a class="btn btn-primary btn-sm" href="prestador.html">Ver perfil</a></div>
     </div>
 </article>
-<article class="card cartao prestador-card">
+</div>
+<div class="col">
+<article class="card cartao prestador-card h-100">
     <div class="card-body">
         <div class="d-flex align-items-center gap-3">
-            <a href="prestador.html" aria-label="Ver perfil de Marcos Silveira"><img src="assets/img/marcos.png" alt="Foto de Marcos Silveira" class="foto-media"></a>
+            <a href="prestador.html" aria-label="Ver perfil de Marcos Silveira"><picture><source srcset="assets/img/marcos.webp" type="image/webp"><img src="assets/img/marcos.png" alt="Foto de Marcos Silveira" class="foto-media" width="54" height="54" loading="lazy" decoding="async"></picture></a>
             <div class="flex-grow-1 dados-prestador">
                 <a href="prestador.html" class="nome-prestador">Marcos Silveira</a>
                 <div><span class="badge etiqueta">Pintura & Texturas</span></div>
@@ -95,6 +106,7 @@
         <div class="mt-3 d-flex justify-content-between align-items-center"><small>Orçamento: Sob consulta</small><a class="btn btn-primary btn-sm" href="prestador.html">Ver perfil</a></div>
     </div>
 </article>
+</div>
 </div>
             </section>
         </main>
@@ -110,7 +122,7 @@
 
         <!-- Menu inferior -->
 
-        <div class="rodape">
+        <div class="rodape d-lg-none">
             <nav class="container pagina-barra px-3 d-flex justify-content-around" aria-label="Navegação inferior">
                 <a href="index.html" class="atalho">
                     <svg class="icone" aria-hidden="true"><use href="assets/img/icones.svg#house"></use></svg>

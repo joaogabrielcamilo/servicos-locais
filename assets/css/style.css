@@ -1,41 +1,93 @@
-/* Serviços Locais - Atividade 08
-   Bootstrap organiza o layout. Aqui ficam cores e detalhes do Stitch. */
+/* Serviços Locais - Entrega 2
+   O Bootstrap organiza o layout (grid, utilitários e componentes).
+   Aqui ficam o Design System do Stitch e os ajustes de cada tela.
+   Medidas em rem/em/%/vw; px apenas em bordas finas. */
+
+/* ===== Design System ===== */
 
 :root {
+  /* Cores */
   --laranja: #a83301;
+  --laranja-escuro: #8d2c00;
+  --laranja-claro: #f9ebe6;
   --azul: #41636e;
+  --azul-escuro: #315b6c;
+  --azul-claro: #c1e6f2;
+  --azul-borda: #b5d1dd;
+  --lilas: #e9ecff;
   --fundo: #faf8ff;
   --campo: #f0f1ff;
+  --campo-claro: #f5f6ff;
+  --branco: #fff;
   --texto: #131b2e;
+  --texto-suave: #456574;
+  --cinza: #5f6b78;
+  --placeholder: #89949e;
+  --marrom: #59413a;
+  --borda: #eeedf4;
+
+  /* Tipografia fluida (clamp + rem + vw) */
+  --fonte: 'Plus Jakarta Sans', Arial, sans-serif;
+  --fs-base: clamp(0.875rem, 0.84rem + 0.15vw, 0.9375rem);
+  --fs-pequena: 0.75rem;
+  --fs-mini: 0.6875rem;
+  --fs-destaque: clamp(1.75rem, 1.1rem + 2vw, 2.75rem);
+  --fs-titulo: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  --fs-subtitulo: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  --fs-secao: clamp(1rem, 0.95rem + 0.3vw, 1.25rem);
+  --fs-item: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+
+  /* Formas */
+  --raio-pequeno: 0.5625rem;
+  --raio: 0.75rem;
+  --raio-grande: 0.9375rem;
+  --raio-pilula: 50rem;
+  --sombra: 0 0.125rem 0.25rem #1f233008;
+  --sombra-media: 0 0.25rem 0.8rem #17203b0a;
+
+  /* Medidas reutilizadas */
+  --icone-botao: 2.25rem;
+  --icone-grande: 3.4375rem;
+  --altura-menu: 4.75rem;
+
+  /* Bootstrap usando as mesmas cores e fontes */
+  --bs-body-font-family: var(--fonte);
+  --bs-body-color: var(--texto);
+  --bs-body-bg: var(--fundo);
+  --bs-border-radius: var(--raio);
+  --bs-link-color-rgb: 168, 51, 1;
+  --bs-link-hover-color-rgb: 141, 44, 0;
 }
 
 body {
   background: var(--fundo);
   color: var(--texto);
-  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-  font-size: 14px;
-  padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  font-family: var(--fonte);
+  font-size: var(--fs-base);
+  padding-bottom: calc(var(--altura-menu) + env(safe-area-inset-bottom, 0px));
 }
 
-h1, h2, h3 {
+h1, h2, h3, .h3, .h4, .h5, .h6 {
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
+
+h3, .h3 { font-size: var(--fs-titulo); }
+h4, .h4 { font-size: var(--fs-subtitulo); }
+h5, .h5 { font-size: var(--fs-secao); }
+h6, .h6 { font-size: var(--fs-item); }
 
 a {
   text-decoration: none;
 }
 
-.pagina {
-  max-width: 720px;
-}
-
+.pagina,
 .pagina-barra {
-  max-width: 720px;
+  max-width: 45rem;
 }
 
 .cor-suave {
-  color: #456574;
+  color: var(--texto-suave);
 }
 
 .texto-laranja, .link-laranja {
@@ -43,27 +95,46 @@ a {
 }
 
 .link-laranja:hover {
-  color: #842500;
+  color: var(--laranja-escuro);
 }
 
 .pontinho {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 50%;
   background: var(--laranja);
   vertical-align: middle;
 }
 
-/* Cabeçalho e menu inferior */
+/* O <picture> (WebP + PNG) não interfere no alinhamento das imagens. */
+picture {
+  display: contents;
+}
+
+/* ===== Ícones SVG ===== */
+
+.icone {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  display: inline-block;
+}
+
+/* ===== Cabeçalho ===== */
 
 .cabecalho {
   background: var(--fundo);
-  border-bottom: 1px solid #eeedf4;
+  border-bottom: 1px solid var(--borda);
 }
 
 .cabecalho .navbar {
-  min-height: 70px;
+  min-height: 4.375rem;
 }
 
 .marca {
@@ -76,35 +147,37 @@ a {
 }
 
 .marca img {
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
 }
 
 .marca strong {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .marca small {
-  font-size: 12px;
+  font-size: var(--fs-pequena);
   color: var(--azul);
 }
 
 .perfil-botao {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: var(--icone-botao);
+  height: var(--icone-botao);
   border-radius: 50%;
   background: var(--laranja);
   border: 0;
-  color: white;
+  color: var(--branco);
 }
 
 .voltar {
-  color: #334f60;
-  font-size: 18px;
+  color: var(--azul-escuro);
+  font-size: 1.125rem;
   display: inline-flex;
-  width: 36px;
-  height: 36px;
+  width: var(--icone-botao);
+  height: var(--icone-botao);
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -115,6 +188,26 @@ a {
   color: var(--laranja);
 }
 
+/* Menu do topo: aparece só no desktop (d-none d-lg-flex) */
+
+.link-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.5em 0.9em;
+  border-radius: var(--raio-pilula);
+  color: var(--cinza);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.link-topo.ativo, .link-topo:hover {
+  color: var(--laranja);
+  background: var(--laranja-claro);
+}
+
+/* ===== Menu inferior (mobile e tablet) ===== */
+
 .rodape {
   position: fixed;
   bottom: 0;
@@ -122,13 +215,13 @@ a {
   right: 0;
   z-index: 1020;
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  border-top: 1px solid #eeedf4;
+  border-top: 1px solid var(--borda);
   background: var(--fundo);
-  box-shadow: 0 -3px 14px #17203b0b;
+  box-shadow: 0 -0.2rem 0.9rem #17203b0b;
 }
 
 .rodape nav {
-  min-height: 72px;
+  min-height: 4.5rem;
 }
 
 .atalho {
@@ -136,112 +229,128 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
-  min-width: 62px;
-  color: #606a75;
-  font-size: 11px;
+  gap: 0.2rem;
+  min-width: 3.875rem;
+  color: var(--cinza);
+  font-size: var(--fs-mini);
   font-weight: 600;
 }
 
-.atalho i {
-  font-size: 19px;
+.atalho .icone {
+  width: 1.3rem;
+  height: 1.3rem;
 }
 
 .atalho.ativo, .atalho:hover {
   color: var(--laranja);
 }
 
-/* Evita que avisos do Bootstrap fiquem escondidos atrás do menu. */
+/* Rodapé informativo, no fluxo da página */
 
-.toast-container {
-  bottom: calc(84px + env(safe-area-inset-bottom, 0px)) !important;
+.rodape-informacoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-top: 1px solid var(--borda);
+  color: var(--cinza);
+  font-size: var(--fs-mini);
 }
 
-/* Componentes do Bootstrap com as cores do protótipo */
+/* ===== Componentes do Bootstrap com as cores do protótipo ===== */
 
 .btn {
-  border-radius: 11px;
+  border-radius: 0.6875rem;
   font-weight: 600;
 }
 
 .btn-primary {
-  --bs-btn-bg: #a83301;
-  --bs-btn-border-color: #a83301;
-  --bs-btn-hover-bg: #8d2c00;
-  --bs-btn-hover-border-color: #8d2c00;
-  --bs-btn-active-bg: #8d2c00;
-  --bs-btn-active-border-color: #8d2c00;
+  --bs-btn-bg: var(--laranja);
+  --bs-btn-border-color: var(--laranja);
+  --bs-btn-hover-bg: var(--laranja-escuro);
+  --bs-btn-hover-border-color: var(--laranja-escuro);
+  --bs-btn-active-bg: var(--laranja-escuro);
+  --bs-btn-active-border-color: var(--laranja-escuro);
+  --bs-btn-disabled-bg: var(--laranja);
+  --bs-btn-disabled-border-color: var(--laranja);
 }
 
 .btn-light {
-  --bs-btn-bg: #f0f1ff;
-  --bs-btn-border-color: #f0f1ff;
-  --bs-btn-color: #41636e;
+  --bs-btn-bg: var(--campo);
+  --bs-btn-border-color: var(--campo);
+  --bs-btn-color: var(--azul);
+  --bs-btn-hover-bg: var(--lilas);
+  --bs-btn-hover-border-color: var(--lilas);
+  --bs-btn-hover-color: var(--laranja);
 }
 
 .botao-destaque {
-  min-height: 52px;
-  padding: 14px;
+  min-height: 3.25rem;
+  padding: 0.875rem;
 }
 
 .form-control, .form-select {
   border: 1px solid transparent;
-  background: var(--campo);
-  border-radius: 12px;
-  padding: 12px 14px;
-  font-size: 14px;
+  background-color: var(--campo);
+  border-radius: var(--raio);
+  padding: 0.75rem 0.875rem;
+  font-size: 0.875rem;
 }
 
 .form-control:focus, .form-select:focus {
-  border-color: #b5d1dd;
-  background: #fff;
-  box-shadow: 0 0 0 .16rem #41636e22;
+  border-color: var(--azul-borda);
+  background-color: var(--branco);
+  box-shadow: 0 0 0 0.16rem #41636e22;
 }
 
 .form-control::placeholder {
-  color: #89949e;
+  color: var(--placeholder);
 }
 
 .form-label {
-  font-size: 12px;
+  font-size: var(--fs-pequena);
   font-weight: 700;
+}
+
+.form-check-input:checked {
+  background-color: var(--azul);
+  border-color: var(--azul);
+}
+
+.form-check-input:focus {
+  border-color: var(--azul-borda);
+  box-shadow: 0 0 0 0.16rem #41636e22;
 }
 
 .rotulo-campo {
   text-transform: uppercase;
-  color: #59413a;
+  color: var(--marrom);
 }
 
 .cartao {
   border: 0;
-  border-radius: 15px;
-  background: white;
-  box-shadow: 0 2px 4px #1f233008;
+  border-radius: var(--raio-grande);
+  background: var(--branco);
+  box-shadow: var(--sombra);
 }
 
 .badge {
   font-weight: 600;
 }
 
-.etiqueta {
-  background: #eaedff;
-  color: #426473;
-  border-radius: 30px;
-  padding: 7px 10px;
+.etiqueta, .etiqueta-azul {
+  border-radius: var(--raio-pilula);
+  padding: 0.45rem 0.65rem;
 }
 
-.prestador-card .etiqueta {
-  max-width: 100%;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  text-align: left;
+.etiqueta {
+  background: var(--lilas);
+  color: var(--azul);
 }
 
 .etiqueta-azul {
-  background: #c1e6f2;
-  color: #315b6c;
-  border-radius: 30px;
-  padding: 7px 10px;
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
 }
 
 .estrela {
@@ -251,7 +360,7 @@ a {
 .rotulo {
   color: var(--laranja);
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: var(--fs-pequena);
   font-weight: 700;
 }
 
@@ -259,24 +368,49 @@ a {
   color: var(--azul);
 }
 
-/* Tela inicial */
+.modal-content, .offcanvas {
+  background: var(--fundo);
+  border: 0;
+}
+
+.modal-content {
+  border-radius: var(--raio-grande);
+}
+
+/* Evita que avisos do Bootstrap fiquem escondidos atrás do menu. */
+
+.toast-container {
+  bottom: calc(var(--altura-menu) + 0.5rem + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* ===== Tela inicial ===== */
 
 .inicio {
-  padding-top: 12px;
+  padding-top: 0.75rem;
 }
 
 .logo-inicio {
   display: block;
-  width: 55px;
-  height: 55px;
+  width: var(--icone-grande);
+  height: var(--icone-grande);
   object-fit: contain;
-  margin: 0 auto 16px;
+  margin: 0 auto 1rem;
+}
+
+/* No celular o título fica só para leitores de tela, como no protótipo. */
+.titulo-inicio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 .busca-principal {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 13px #17203b0a;
+  background: var(--branco);
+  border-radius: 0.875rem;
+  box-shadow: var(--sombra-media);
 }
 
 .busca-principal .form-control {
@@ -292,18 +426,18 @@ a {
 }
 
 .busca-principal .btn {
-  margin: 5px;
-  border-radius: 10px;
+  margin: 0.3rem;
+  border-radius: 0.625rem;
 }
 
 .subtitulo {
-  font-size: 12px;
+  font-size: var(--fs-pequena);
   color: var(--azul);
   font-weight: 700;
 }
 
 .categorias {
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 .categoria-item {
@@ -311,31 +445,36 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 9px;
+  gap: 0.5625rem;
   font-weight: 600;
-  font-size: 12px;
-  padding: 11px 0;
-  border-radius: 14px;
+  font-size: var(--fs-pequena);
+  padding: 0.6875rem 0;
+  border-radius: 0.875rem;
 }
 
 .categoria-item:hover {
-  background: #f0f1ff;
+  background: var(--campo);
   color: var(--laranja);
 }
 
 .circulo-icone {
   display: inline-grid;
   place-items: center;
-  width: 55px;
-  height: 55px;
+  width: var(--icone-grande);
+  height: var(--icone-grande);
   border-radius: 50%;
-  background: #fff;
+  background: var(--branco);
   color: var(--azul);
-  box-shadow: 0 3px 9px #17203b0a;
-  font-size: 20px;
+  box-shadow: 0 0.2rem 0.6rem #17203b0a;
+  font-size: 1.25rem;
 }
 
-/* Cards de prestadores, busca e favoritos */
+.circulo-icone .icone {
+  width: 1.35em;
+  height: 1.35em;
+}
+
+/* ===== Busca, cards de prestadores e favoritos ===== */
 
 .busca-filtro .input-group-text {
   border: 0;
@@ -348,37 +487,41 @@ a {
 }
 
 .busca-filtro .btn {
-  margin-left: 8px !important;
+  margin-left: 0.5rem !important;
 }
 
 .filtro-chip {
   border: 0;
-  background: #e9ecff;
-  color: #41636e;
-  border-radius: 50px;
-  padding: 7px 13px;
-  font-size: 12px;
+  background: var(--lilas);
+  color: var(--azul);
+  border-radius: var(--raio-pilula);
+  padding: 0.45rem 0.8rem;
+  font-size: var(--fs-pequena);
   font-weight: 600;
 }
 
 .filtro-chip.ativo {
   background: var(--azul);
-  color: #fff;
+  color: var(--branco);
 }
 
 .filtro-rolagem {
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding-bottom: 5px;
+  padding-bottom: 0.3rem;
 }
 
 .filtro-rolagem .filtro-chip {
   white-space: nowrap;
 }
 
+.painel-filtros .form-check-label {
+  font-size: 0.875rem;
+}
+
 .foto-media {
-  height: 54px;
-  width: 54px;
+  width: 3.375rem;
+  height: 3.375rem;
   object-fit: cover;
   border-radius: 50%;
   flex-shrink: 0;
@@ -390,7 +533,7 @@ a {
 
 .nome-prestador {
   color: var(--texto);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -399,39 +542,60 @@ a {
 }
 
 .prestador-card .card-body {
-  padding: 15px;
+  padding: 0.9375rem;
 }
 
-.prestador-card .foto-media {
-  width: 54px;
-  height: 54px;
+.prestador-card .etiqueta {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
 }
+
+/* Coração de favorito (checkbox estilizado) */
 
 .curtir {
-  display: inline-grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icone-botao);
+  height: var(--icone-botao);
   border: 0;
   border-radius: 50%;
   color: #a9c9d6;
   background: transparent;
-  font-size: 18px;
+  font-size: 1.125rem;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .curtir:hover {
   background: #fff2ee;
 }
 
-.curtir.marcado {
-  color: var(--laranja);
-  background: #f9ebe6;
+.curtir input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.curtir input:checked + span {
+  color: #bd3f28;
+}
+
+.curtir input:checked + span .icone {
+  fill: currentColor;
+}
+
+.curtir input:focus-visible + span {
+  outline: 2px solid var(--texto-suave);
+  outline-offset: 0.2rem;
 }
 
 .dados-menores {
-  color: #566878;
-  font-size: 12px;
+  color: var(--cinza);
+  font-size: var(--fs-pequena);
 }
 
 .preco {
@@ -440,54 +604,54 @@ a {
 }
 
 .sem-favoritos {
-  background: #f0f1ff;
-  border-radius: 14px;
-  padding: 35px 22px;
+  background: var(--campo);
+  border-radius: 0.875rem;
+  padding: 2.2rem 1.4rem;
 }
 
-/* Detalhes do prestador, iguais ao Stitch: uma coluna */
+/* ===== Detalhes do prestador ===== */
 
 .detalhes .foto-grande {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #e7e9ff;
+  border: 0.25rem solid var(--lilas);
 }
 
 .informacoes small {
   display: block;
-  margin-top: 3px;
-  font-size: 11px;
+  margin-top: 0.2rem;
+  font-size: var(--fs-mini);
   color: #7d6057;
 }
 
 .informacoes strong {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .borda-direita {
-  border-right: 1px solid #e9eafb;
+  border-right: 1px solid var(--lilas);
 }
 
 .apresentacao {
   font-style: italic;
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .icone-fundo {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: var(--icone-botao);
+  height: var(--icone-botao);
   border-radius: 50%;
-  background: #e9edff;
+  background: var(--lilas);
   color: var(--laranja);
   flex-shrink: 0;
 }
 
-/* Cadastro e edição de perfil */
+/* ===== Cadastro e edição de perfil ===== */
 
 .opcao-servico {
   display: block;
@@ -504,59 +668,70 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 0.45rem;
   background: var(--campo);
   color: var(--azul);
-  min-height: 79px;
-  border-radius: 12px;
+  min-height: 4.9rem;
+  border-radius: var(--raio);
   border: 2px solid transparent;
-  padding: 10px 3px;
+  padding: 0.625rem 0.2rem;
 }
 
 .opcao-servico i {
-  font-size: 17px;
+  font-size: 1.0625rem;
 }
 
 .opcao-servico small {
-  font-size: 11px;
+  font-size: var(--fs-mini);
   color: inherit;
   font-weight: 600;
 }
 
 .opcao-servico input:checked + span {
   background: var(--azul);
-  color: #fff;
+  color: var(--branco);
 }
 
 .opcao-servico input:focus-visible + span {
   outline: 3px solid #9cc5d2;
 }
 
+.aviso-cadastro {
+  background: var(--campo-claro);
+  color: var(--cinza);
+  border: 0;
+  border-radius: var(--raio-pequeno);
+  padding: 0.625rem 0.75rem;
+  font-size: var(--fs-pequena);
+}
+
+/* ===== Perfil do cliente ===== */
+
 .avatar-cliente, .botao-editar {
   border: 0;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  width: 55px;
-  height: 55px;
-  background: #c1e6f2;
+  width: var(--icone-grande);
+  height: var(--icone-grande);
+  background: var(--azul-claro);
   color: var(--azul);
-  font-size: 21px;
+  font-size: 1.3125rem;
   flex-shrink: 0;
 }
 
 .botao-editar {
-  width: 36px;
-  height: 36px;
+  width: var(--icone-botao);
+  height: var(--icone-botao);
   background: var(--campo);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .dados-linha {
-  background: #f5f6ff;
-  border-radius: 9px;
-  padding: 11px 14px;
-  margin-bottom: 9px;
+  background: var(--campo-claro);
+  border-radius: var(--raio-pequeno);
+  padding: 0.6875rem 0.875rem;
+  margin-bottom: 0.5625rem;
 }
 
 .dados-linha:last-child {
@@ -564,86 +739,88 @@ a {
 }
 
 .dados-linha dt {
-  font-size: 11px;
+  font-size: var(--fs-mini);
   font-weight: 400;
-  color: #6b7783;
+  color: var(--cinza);
 }
 
 .dados-linha dd {
-  margin: 2px 0 0;
+  margin: 0.125rem 0 0;
   font-weight: 600;
+}
+
+.dados-cliente .list-group-item {
+  background: var(--campo-claro);
+  border: 0;
+  border-radius: var(--raio-pequeno);
 }
 
 .borda-topo {
   border-top: 1px solid #e1e4f4;
 }
 
+/* ===== Responsividade (mobile first) ===== */
+
 @media (min-width: 768px) {
-  body {
-    padding-bottom: 70px;
-  }
-
-  .pagina {
-    max-width: 700px;
-  }
-
-  .pagina-barra {
-    max-width: 700px;
-  }
-
   .inicio {
-    padding-top: 20px;
+    padding-top: 1.25rem;
   }
 
   .categorias {
-    row-gap: 16px;
-  }
-
-  .rodape nav {
-    min-height: 65px;
+    row-gap: 1rem;
   }
 
   .prestador-card .card-body {
-    padding: 19px;
+    padding: 1.2rem;
   }
 }
 
-/* Ícones SVG e coração demonstrativo */
-.icone { fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; width: 1em; height: 1em; vertical-align: -0.125em; display: inline-block; }
-.circulo-icone .icone { width: 1.35em; height: 1.35em; }
-.atalho .icone { width: 21px; height: 21px; }
-.curtir { cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
-.curtir input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.curtir input:checked + span { color: #bd3f28; }
-.curtir input:checked + span .icone { fill: currentColor; }
-.curtir input:focus-visible + span { outline: 2px solid #456574; outline-offset: 3px; }
+/* Desktop: o menu vai para o topo e as telas usam colunas. */
+@media (min-width: 992px) {
+  body {
+    padding-bottom: 0;
+  }
 
+  .pagina,
+  .pagina-barra {
+    max-width: 72rem;
+  }
 
-/* Rodapé no fluxo da página (Sticky Footer) */
-.rodape-informacoes {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  border-top: 1px solid #eeedf4;
-  color: #64717e;
-  font-size: 11px;
-}
+  .inicio {
+    padding-top: 2.5rem;
+  }
 
-/* Lista de dados do cliente usando List Group */
-.dados-cliente .list-group-item {
-  background: #f5f6ff;
-  border: 0;
-  border-radius: 9px;
-  margin-bottom: 9px;
-}
+  .logo-inicio {
+    margin-left: 0;
+  }
 
-/* Aviso discreto do formulário */
-.aviso-cadastro {
-  background: #f5f6ff;
-  color: #64717e;
-  border: 0;
-  border-radius: 9px;
-  padding: 10px 12px;
-  font-size: 12px;
+  .titulo-inicio {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    font-size: var(--fs-destaque);
+    line-height: 1.15;
+  }
+
+  /* Sem o botão de filtros, o campo de busca ganha o canto arredondado. */
+  .busca-filtro .form-control {
+    border-top-right-radius: var(--raio) !important;
+    border-bottom-right-radius: var(--raio) !important;
+  }
+
+  .lateral-fixa {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .borda-topo {
+    border-top: 0;
+  }
+
+  .toast-container {
+    bottom: 1rem !important;
+  }
 }
